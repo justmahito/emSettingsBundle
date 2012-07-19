@@ -7,7 +7,7 @@
     <parameters>
     </parameters>-->
     <services>
-        <service id="twig.extension.settings" class="Settings\Bundle\Twig\Extension\SettingExtension">
+        <service id="twig.extension.settings" class="Settings\Bundle\Twig\Extension\SettingsExtension">
             <tag name="twig.extension"/>
             <argument type="service" id="em.settings"/>
         </service>

@@ -1,6 +1,6 @@
 <?php
 
-namespace Settings\Bundle\Twig\Extension;
+namespace EM\SettingsBundle\Twig\Extension;
 
 use Symfony\Bridge\Twig\Extension;
 use Symfony\Component\Form\FormView;
@@ -10,7 +10,7 @@ use Symfony\Component\Form\FormView;
  *
  * @author Shustrik
  */
-class SettingExtension extends \Twig_Extension
+class SettingsExtension extends \Twig_Extension
 {
 
     protected $settings;

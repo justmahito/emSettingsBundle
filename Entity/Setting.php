@@ -1,8 +1,8 @@
 <?php
 
-namespace Settings\Bundle\Entity;
+namespace EM\SettingsBundle\Entity;
 
-use Settings\Bundle\Model\Setting as AbstractSetting;
+use EM\SettingsBundle\Model\Setting as AbstractSetting;
 use Doctrine\ORM\Mapping as ORM;
 
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Settings\Bundle;
+namespace EM\SettingsBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 

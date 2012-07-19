@@ -1,6 +1,6 @@
 <?php
 
-namespace Settings\Bundle\Model;
+namespace EM\SettingsBundle\Model;
 
 /**
  * Settings\Bundle\Entity\Setting

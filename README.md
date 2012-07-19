@@ -1,4 +1,4 @@
 emSettingsBundle
-================
+=============
 
-bundle for save optional information
+The emSettingsBundle adds support for save different information into database

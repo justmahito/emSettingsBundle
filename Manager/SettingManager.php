@@ -6,9 +6,9 @@
  * Time: 12:45 PM
  * To change this template use File | Settings | File Templates.
  */
-namespace Settings\Bundle\Manager;
+namespace EM\SettingsBundle\Manager;
 
-use Settings\Bundle\Model\Setting as AbstractSetting;
+use EM\SettingsBundle\Model\Setting as AbstractSetting;
 
 
 /**
@@ -130,5 +130,12 @@ class SettingManager implements ManagerInterface
     {
         $this->em->remove($setting);
         $this->em->flush();
+    }
+
+    /**
+     * @return mixed
+     */
+    function getRepository()
+    {
     }
 }

@@ -6,8 +6,8 @@
  * Time: 12:46 PM
  * To change this template use File | Settings | File Templates.
  */
-namespace Settings\Bundle\Manager;
-use Settings\Bundle\Model\Setting as AbstractSetting;
+namespace EM\SettingsBundle\Manager;
+use EM\SettingsBundle\Model\Setting as AbstractSetting;
 /**
  *
  */
@@ -19,7 +19,7 @@ interface ManagerInterface
      *
      * @param $name
      *
-     * @return mixed
+     * @return Setting
      */
     function getSetting($name);
 
@@ -49,7 +49,7 @@ interface ManagerInterface
 
     /**
      * @abstract
-     * @return mixed
+     * @return Setting
      */
     function createSetting();
 
@@ -59,4 +59,10 @@ interface ManagerInterface
      * @return mixed
      */
     function deleteSetting(AbstractSetting $setting);
+
+    /**
+     * @abstract
+     * @return mixed
+     */
+    function getRepository();
 }
