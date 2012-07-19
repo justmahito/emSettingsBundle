@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<doctrine-mongo-mapping xmlns="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                        xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
+                        http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
+
+    <mapped-superclass name="Settings\Bundle\Entity\Setting" collection="setting">
+
+        <field name="identifier" column="identifier" type="string" length="255"/>
+
+        <field name="label" column="label" type="string" length="255" />
+
+        <field name="type" column="type" type="smallint"/>
+
+        <field name="options" column="options" type="text"/>
+
+        <field name="value" column="value" type="text" />
+
+        <indexes>
+            <index unique="true" dropDups="true">
+                <key name="identifier" order="asc" />
+                <option name="safe" value="true" />
+            </index>
+        </indexes>
+
+    </mapped-superclass>
+</doctrine-mongo-mapping>
