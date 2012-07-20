@@ -15,7 +15,7 @@ class SettingsExtension extends \Twig_Extension
 
     protected $settings;
 
-    function __construct(\Settings\Bundle\Manager\ManagerInterface $settings)
+    function __construct(\EM\SettingsBundle\Manager\ManagerInterface $settings)
     {
         $this->settings = $settings;
     }

@@ -4,7 +4,10 @@
                   xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping
                   http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
 
-    <mapped-superclass name="Settings\Bundle\Entity\Setting">
+    <entity name="EM\SettingsBundle\Entity\Setting" table="em_settings">
+        <id name="id" type="integer">
+            <generator strategy="AUTO" />
+        </id>
 
         <field name="identifier" column="identifier" type="string" length="255"  unique="true" nullable="false" />
 
@@ -16,6 +19,6 @@
 
         <field name="value" column="value" type="text" />
 
-    </mapped-superclass>
+    </entity>
 
 </doctrine-mapping>

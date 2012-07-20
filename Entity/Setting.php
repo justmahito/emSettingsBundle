@@ -8,8 +8,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * Settings\Bundle\Entity\Setting
- *
  */
 class Setting extends AbstractSetting
 {
+
 }

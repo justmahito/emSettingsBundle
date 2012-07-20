@@ -6,7 +6,7 @@
 
     <services>
 
-        <service id="em.settings.manager.default" class="Settings\Bundle\Manager\SettingManager">
+        <service id="em.settings.manager.default" class="EM\SettingsBundle\Manager\SettingManager">
             <argument type="service" id="em.settings.entity_manager"/>
             <argument>%em.setting.model.class%</argument>
             <argument>%em.setting.list.delimiter%</argument>

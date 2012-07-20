@@ -4,7 +4,7 @@
                         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-    <mapped-superclass name="Settings\Bundle\Entity\Setting" collection="setting">
+    <mapped-superclass name="EM\SettingsBundle\Entity\Setting" collection="setting">
 
         <field name="identifier" column="identifier" type="string" length="255"/>
 

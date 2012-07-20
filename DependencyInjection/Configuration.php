@@ -34,7 +34,7 @@ class Configuration implements ConfigurationInterface
             ->defaultNull()
           ->end()
           ->scalarNode('entity')
-                ->defaultValue('Settings\\Bundle\\Entity\\Setting')
+                ->defaultValue('EM\\SettingsBundle\\Entity\\Setting')
             ->end()
           ->scalarNode('array_delemiter')
             ->defaultValue(',')
