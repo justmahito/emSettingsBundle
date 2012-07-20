@@ -8,6 +8,7 @@
  */
 namespace EM\SettingsBundle\Manager;
 
+use Doctrine\Common\Persistence\ObjectManager;
 use EM\SettingsBundle\Model\Setting as AbstractSetting;
 
 
@@ -24,7 +25,7 @@ class SettingManager implements ManagerInterface
     /**
      * @var
      */
-    private $entityManager;
+    private $objectManager;
 
     /**
      * @var
@@ -35,11 +36,11 @@ class SettingManager implements ManagerInterface
     /**
      *
      */
-    public function __construct(\Doctrine\ORM\EntityManager $em, $class, $delimiter)
+    public function __construct(ObjectManager $om, $class, $delimiter)
     {
-        $this->entityManager = $em;
-        $this->repository = $this->repository = $em->getRepository($class);
-        $metadata = $em->getClassMetadata($class);
+        $this->objectManager = $om;
+        $this->repository = $this->repository = $om->getRepository($class);
+        $metadata = $om->getClassMetadata($class);
         $this->class = $metadata->name;
         $this->listDelimiter = $delimiter;
     }
@@ -48,7 +49,7 @@ class SettingManager implements ManagerInterface
     /**
      * @param $name
      *
-     * @return \Settings\Bundle\Model\Setting
+     * @return \EM\SettingsBundle\Entity\Setting
      */
     public function getSetting($name)
     {
@@ -101,8 +102,8 @@ class SettingManager implements ManagerInterface
     public function updateSetting(AbstractSetting $setting)
     {
         /** @var $setting \Settings\Bundle\Entity\Setting */
-        $this->em->persist($setting);
-        $this->em->flush();
+        $this->om->persist($setting);
+        $this->om->flush();
     }
 
     /**
@@ -128,8 +129,8 @@ class SettingManager implements ManagerInterface
      */
     public function deleteSetting(AbstractSetting $setting)
     {
-        $this->em->remove($setting);
-        $this->em->flush();
+        $this->om->remove($setting);
+        $this->om->flush();
     }
 
     /**
@@ -137,5 +138,6 @@ class SettingManager implements ManagerInterface
      */
     function getRepository()
     {
+        return $this->repository;
     }
 }

@@ -22,7 +22,8 @@ class SettingsExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
+        $loader->load('twig.xml');
+        $loader->load(sprintf('%s.xml', $config['db_driver']));
         $container->setParameter('em.setting.model.class', $config['entity']);
         $container->setParameter('em.setting.list.delimiter', $config['array_delemiter']);
         $container->setParameter('em.model.manager.name', $config['model_manager']);

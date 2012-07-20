@@ -19,9 +19,17 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('em_settings');
+        $supportedDrivers = array('orm', 'mongodb');
 
         $rootNode
           ->children()
+          ->scalarNode('db_driver')
+              ->validate()
+                  ->ifNotInArray($supportedDrivers)
+                  ->thenInvalid('The driver %s is not supported. Please choose one of '.json_encode($supportedDrivers))
+              ->end()
+          ->defaultValue('orm')
+          ->end()
           ->scalarNode('model_manager')
             ->defaultNull()
           ->end()
