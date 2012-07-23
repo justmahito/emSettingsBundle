@@ -4,17 +4,18 @@
                         xsi:schemaLocation="http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping
                         http://doctrine-project.org/schemas/odm/doctrine-mongo-mapping.xsd">
 
-    <mapped-superclass name="EM\SettingsBundle\Entity\Setting" collection="setting">
+    <document name="EM\SettingsBundle\Document\Setting" collection="settings">
+        <field fieldName="id" id="true" />
 
         <field name="identifier" column="identifier" type="string" length="255"/>
 
         <field name="label" column="label" type="string" length="255" />
 
-        <field name="type" column="type" type="smallint"/>
+        <field name="type" column="type" type="int"/>
 
-        <field name="options" column="options" type="text"/>
+        <field name="options" column="options" type="string"/>
 
-        <field name="value" column="value" type="text" />
+        <field name="value" column="value" type="string" />
 
         <indexes>
             <index unique="true" dropDups="true">
@@ -23,5 +24,5 @@
             </index>
         </indexes>
 
-    </mapped-superclass>
+    </document>
 </doctrine-mongo-mapping>

@@ -11,14 +11,29 @@ for symfony 2.0 read doc install for symfony 2.0
 Install from composer for symfony 2.1
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Add emSettingsBundle in your composer.json:
+Add emSettingsBundle in deps:
 
-```js
-{
-    "require": {
-        "everymove/settings-bundle": "*"
-    }
-}
+[emSettingBundle]
+    git=git://github.com/Everymove/emSettingsBundle.git
+    target=bundles/EM/SettingsBundle
+
+
+Now, run the vendors script to download the bundle:
+
+``` bash
+$ php bin/vendors install
+```
+
+Add the `EM` namespace to your autoloader:
+
+``` php
+<?php
+// app/autoload.php
+
+$loader->registerNamespaces(array(
+    // ...
+    'EM' => __DIR__.'/../vendor/bundles',
+));
 ```
 
 

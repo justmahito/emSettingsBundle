@@ -40,8 +40,7 @@ class SettingManager implements ManagerInterface
     {
         $this->objectManager = $om;
         $this->repository = $this->repository = $om->getRepository($class);
-        $metadata = $om->getClassMetadata($class);
-        $this->class = $metadata->name;
+        $this->class = $class;
         $this->listDelimiter = $delimiter;
     }
 
@@ -134,7 +133,7 @@ class SettingManager implements ManagerInterface
     }
 
     /**
-     * @return mixed
+     * @return ObjectRepository
      */
     function getRepository()
     {

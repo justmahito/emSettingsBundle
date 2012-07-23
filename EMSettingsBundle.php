@@ -7,6 +7,6 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 /**
  *
  */
-class SettingsBundle extends Bundle
+class EMSettingsBundle extends Bundle
 {
 }
