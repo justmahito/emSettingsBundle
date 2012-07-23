@@ -1,7 +1,7 @@
 emSettingsBundle
 ============
 
-The emSettingsBundle adds support for save different information into database. You can save small imortant information for example api keys
+The emSettingsBundle adds support for save different information into database. You can save small imortant information, for example, api keys
 
 Installing
 ----------
@@ -56,7 +56,7 @@ $container->get('em.settings')->getSettingValue($key, $default);
 
   get value of the settign, if value not found, returned default value
 
-SettingManager contain all method which you can call
+SettingManager contain all methods which you can call
 
 
 Twig
@@ -81,5 +81,5 @@ em_settings:
     setting_manager:        em.settings.manager.default
 
 
-Well, this all to emSettingsBundle work. Suggestions, bug reports and observations
-are wellcome.
+Well, this is all about emSettingsBundle work. Suggestions, bug reports and observations
+are welcome.
