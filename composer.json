@@ -24,6 +24,9 @@
         "symfony/framework-bundle": "2.1.*",
         "doctrine/doctrine-bundle": "*"
     },
+    "suggest": {
+        "doctrine/mongodb-odm-bundle": "*"
+    }
     "autoload": {
         "psr-0": { "EM\\SettingsBundle": "" }
     },
